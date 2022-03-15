@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pgadmin4
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    chart: pgadmin4
+    targetRevision: 1.9.6
+    repoURL: 'https://helm.runix.net'
+    helm:
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: VolumePermissions.enabled
+          value: 'true'
+        - name: service.type
+          value: LoadBalancer
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

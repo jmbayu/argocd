@@ -1,0 +1,2 @@
+**/**.ignore
+argocd-install/argo-cd/charts/redis-ha-4.12.17.tgz

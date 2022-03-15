@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-web-app-deployment
+  labels:
+    app: node-web-app
+  namespace: node-web-app-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-web-app
+  template:
+    metadata:
+      labels:
+        app: node-web-app
+        version: 0.0.1
+    spec:
+      containers:
+        - image: mbayu/node-web-app-image:1646740090
+          imagePullPolicy: Always
+          name: node-web-app-container
+          volumeMounts:
+            - name: node-web-app-storage
+              mountPath: /tmp/config
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      volumes:
+        - name: node-web-app-storage
+          persistentVolumeClaim:
+            claimName: node-web-app-pv-claim
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
