@@ -17,6 +17,8 @@ spec:
       valueFiles:
         - values.yaml
       parameters:
+        - persistentVolume.size	
+          value: 20Gi
         - name: VolumePermissions.enabled
           value: 'true'
         - name: service.type
