@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: node-web-app-ns
     server: https://kubernetes.default.svc
-  project: node-web-app-project
+  project: firstproject
   source:
     path: node-web-app/
     repoURL: https://github.com/jmbayu/argocd.git
