@@ -8,7 +8,7 @@ spec:
   destination:
     namespace: db
     server: 'https://kubernetes.default.svc'
-  project: default
+  project: firstproject
   source:
     chart: pgadmin4
     targetRevision: 1.9.6
