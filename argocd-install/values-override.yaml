@@ -97,3 +97,9 @@ configs:
     ## Argo expects the password in the secret to be bcrypt hashed. You can create this hash with
     ## `htpasswd -nbBC 10 "" $ARGO_PWD | tr -d ':\n' | sed 's/$2y/$2a/'`
     argocdServerAdminPassword: "$2a$10$ll.dxK/.xun.BA7CKxuWe.iap4dQkf8EP05MoKW4W6sgQs3XFs7Be"
+  
+## Repo Server
+repoServer:
+  serviceAccount:
+    # -- Create repo server service account
+    create: true
