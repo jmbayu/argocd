@@ -18,7 +18,7 @@ spec:
         global:
           postgresql:
             auth:
-              postgresPassword: "GeHeim"
+              postgresPassword: "G3H3im"
               username: ""
               password: ""
               database: ""
