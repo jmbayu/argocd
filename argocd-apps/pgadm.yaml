@@ -11,7 +11,7 @@ spec:
   project: firstproject
   source:
     chart: pgadmin4
-    targetRevision: 1.9.6
+    targetRevision: 1.9.9
     repoURL: 'https://helm.runix.net'
     helm:
       valueFiles:
