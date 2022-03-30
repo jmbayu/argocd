@@ -23,6 +23,8 @@ spec:
           value: 'true'
         - name: service.type
           value: LoadBalancer
+        - name:  service.loadBalancerIP
+          value: 10.1.1.183
   syncPolicy:
     automated:
       prune: true
