@@ -14,6 +14,15 @@ spec:
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 16.8.9
     helm:
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: persistence.storageClass
+          value: nfs-client
+        - name:: redis.replicas.persistence.storageClass
+          value: nfs-client
+        - name:: volumePermissions.enabled
+          value: true
     syncPolicy:
     automated:
       prune: true
