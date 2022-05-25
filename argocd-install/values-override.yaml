@@ -10,7 +10,7 @@ server:
   logFormat: json
   service:
     type: LoadBalancer
-    loadBalancerIP: 10.1.1.180
+    loadBalancerIP: 10.1.1.240
   ## ArgoCD config
   ## reference https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
   configEnabled: true
